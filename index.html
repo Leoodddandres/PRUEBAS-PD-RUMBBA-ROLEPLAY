@@ -1,0 +1,458 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Postulación - Policía Nacional RUMBA RP</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="police_logo.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script type="importmap">
+      {
+        "imports": {
+          "confetti-js": "https://cdn.skypack.dev/canvas-confetti@1.6.0",
+          "anime": "https://cdn.skypack.dev/animejs@3.2.1"
+        }
+      }
+    </script>
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header>
+        <div class="logo-container">
+            <img src="Policia_Nacional_Republica_Dominicana_emblem-Photoroom.png" alt="Policía Nacional RUMBA RP Logo" class="logo">
+        </div>
+        <h1>Formulario de Postulación</h1>
+        <h2>Policía Nacional - RUMBA RP</h2>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <div class="intro-message">
+                <p>¡Gracias por tu interés en unirte a la Policía Nacional en nuestro servidor! Este es un formulario exhaustivo. Responde con seriedad y asegúrate de que todas tus respuestas sean lo más precisas posible.</p>
+            </div>
+
+            <form id="application-form">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="section-indicator">Sección 1 de 6</div>
+                </div>
+
+                <!-- Sección 1: Información General -->
+                <section class="form-section" id="section-1">
+                    <h3>1. Información General</h3>
+                    
+                    <div class="form-group">
+                        <label for="character-name">Nombre Completo de tu personaje en el servidor:</label>
+                        <input type="text" id="character-name" name="character-name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mta-id">ID de MTA (Usa el comando /id para obtenerlo):</label>
+                        <input type="text" id="mta-id" name="mta-id" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="real-age">Edad Real:</label>
+                        <input type="number" id="real-age" name="real-age" min="13" max="99" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="character-age">Edad de tu personaje en el servidor:</label>
+                        <input type="number" id="character-age" name="character-age" min="18" max="70" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="play-hours">¿Cuántas horas aproximadas has jugado en este servidor?</label>
+                        <input type="number" id="play-hours" name="play-hours" min="1" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="experience">¿Tienes experiencia previa en otros servidores de MTA o RP como policía? Si es así, ¿en cuáles y qué funciones desempeñabas?</label>
+                        <textarea id="experience" name="experience" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="norms-knowledge">¿Estás familiarizado con las normas del servidor? ¿Cómo te aseguraste de leerlas?</label>
+                        <textarea id="norms-knowledge" name="norms-knowledge" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="motivation">¿Qué te motiva a unirte a la Policía Nacional en este servidor?</label>
+                        <textarea id="motivation" name="motivation" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="events-availability">¿Estás dispuesto a asistir a entrenamientos y eventos organizados por la Policía Nacional?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="events-availability" value="Sí" required> Sí</label>
+                            <label><input type="radio" name="events-availability" value="No"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn next-btn">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Sección 2: Conocimiento de Roles y Normas -->
+                <section class="form-section hidden" id="section-2">
+                    <h3>2. Conocimiento de Roles y Normas</h3>
+                    
+                    <div class="form-group">
+                        <label for="false-info">¿Qué harías si un civil te da una información falsa o intenta engañarte durante una investigación?</label>
+                        <textarea id="false-info" name="false-info" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bad-decisions">¿Cómo manejarías una situación en la que un compañero de policía está tomando malas decisiones durante una intervención?</label>
+                        <textarea id="bad-decisions" name="bad-decisions" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="arrest-procedures">En caso de arresto, ¿qué procedimientos seguirías para asegurarte de que el detenido sepa sus derechos?</label>
+                        <textarea id="arrest-procedures" name="arrest-procedures" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="vehicle-check">¿Conoces los procedimientos para realizar una revisión de vehículos? ¿Cómo se realiza en el servidor?</label>
+                        <textarea id="vehicle-check" name="vehicle-check" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="recording-civilian">¿Qué harías si durante una operación, un civil comienza a grabar el procedimiento de manera que podría afectar la seguridad o el procedimiento?</label>
+                        <textarea id="recording-civilian" name="recording-civilian" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="metagaming">¿Sabes qué es el metajuego y cómo evitarlo mientras realizas tu labor como policía?</label>
+                        <textarea id="metagaming" name="metagaming" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="powergaming">¿Qué es el powergaming y cómo lo evitarías en tu rol de policía?</label>
+                        <textarea id="powergaming" name="powergaming" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="public-shooting">En caso de un tiroteo en una zona pública, ¿cuál sería tu enfoque para minimizar el daño a civiles y asegurar la escena?</label>
+                        <textarea id="public-shooting" name="public-shooting" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="trolling">¿Sabes cómo manejar situaciones con jugadores que constantemente están interrumpiendo el rol o haciendo trolling?</label>
+                        <textarea id="trolling" name="trolling" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="boring-rp">¿Cómo evitarías que el rol de policía se convirtiera en un "roleplay" aburrido o sin sentido para otros jugadores?</label>
+                        <textarea id="boring-rp" name="boring-rp" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-btn">Anterior</button>
+                        <button type="button" class="btn next-btn">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Sección 3: Resolución de Conflictos y Situaciones de Emergencia -->
+                <section class="form-section hidden" id="section-3">
+                    <h3>3. Resolución de Conflictos y Situaciones de Emergencia</h3>
+                    
+                    <div class="form-group">
+                        <label for="aggressive-stop">Si durante una persecución un civil se detiene de forma agresiva, ¿qué pasos seguirías para evitar una escalada de violencia?</label>
+                        <textarea id="aggressive-stop" name="aggressive-stop" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="residential-armed">¿Cómo manejarías un enfrentamiento armado con un criminal que se encuentra en una zona residencial con civiles alrededor?</label>
+                        <textarea id="residential-armed" name="residential-armed" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resistance-help">Si un compañero policía te dice que no puede realizar un arresto debido a la cantidad de resistencia que enfrenta, ¿cómo intervendrías?</label>
+                        <textarea id="resistance-help" name="resistance-help" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="public-disorder">En una situación donde un civil comienza a gritar y hacer desorden en público, ¿qué pasos tomarías para calmar la situación?</label>
+                        <textarea id="public-disorder" name="public-disorder" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="shock-victim">Si te encuentras con una víctima que acaba de ser agredida y no puede cooperar debido al shock, ¿cómo procederías para conseguir la información necesaria sin forzarla?</label>
+                        <textarea id="shock-victim" name="shock-victim" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="private-property">Si un sospechoso empieza a huir y se esconde en una propiedad privada, ¿cuáles serían tus siguientes pasos para proceder de acuerdo a las normas del servidor?</label>
+                        <textarea id="private-property" name="private-property" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="violent-protest">Si un grupo de civiles comienza a protestar violentamente por la presencia policial, ¿cómo actuarías para dispersarlos de manera pacífica pero firme?</label>
+                        <textarea id="violent-protest" name="violent-protest" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="police-mistake">¿Qué harías si un compañero de policía comete un error grave durante una operación, como usar fuerza innecesaria?</label>
+                        <textarea id="police-mistake" name="police-mistake" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-btn">Anterior</button>
+                        <button type="button" class="btn next-btn">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Sección 4: Aptitudes de Roleplay y Adaptación -->
+                <section class="form-section hidden" id="section-4">
+                    <h3>4. Aptitudes de Roleplay y Adaptación</h3>
+                    
+                    <div class="form-group">
+                        <label for="rp-level">¿Cómo describirías tu nivel de roleplay? ¿Te consideras una persona creativa y adaptable dentro del rol?</label>
+                        <textarea id="rp-level" name="rp-level" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="against-rp">¿Qué harías si un compañero de rol decide hacer algo que va en contra del "Roleplay" del servidor?</label>
+                        <textarea id="against-rp" name="against-rp" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="character-coherence">¿Te comprometes a mantener la coherencia de tu personaje en todo momento, sin romper el rol por diversión personal?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="character-coherence" value="Sí" required> Sí</label>
+                            <label><input type="radio" name="character-coherence" value="No"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="difficult-decision">Si tu personaje tiene que tomar una decisión difícil que vaya en contra de tus intereses como jugador, ¿cómo manejarías la situación?</label>
+                        <textarea id="difficult-decision" name="difficult-decision" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="out-of-rp">Si otro jugador te pide que hagas algo fuera del rol (metajuego o powergaming), ¿cómo lo manejarías?</label>
+                        <textarea id="out-of-rp" name="out-of-rp" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="morally-questionable">¿Cómo gestionarías el rol si tu personaje tiene que hacer una acción moralmente cuestionable para cumplir con su deber?</label>
+                        <textarea id="morally-questionable" name="morally-questionable" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="high-tension">En situaciones de alta tensión, como un tiroteo, ¿cómo te asegurarías de mantener la calma y tomar decisiones lógicas?</label>
+                        <textarea id="high-tension" name="high-tension" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="insufficient-info">¿Qué harías si se te pide realizar un arresto o control de una situación en la que no tienes información suficiente?</label>
+                        <textarea id="insufficient-info" name="insufficient-info" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-btn">Anterior</button>
+                        <button type="button" class="btn next-btn">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Sección 5: Compromiso y Ética -->
+                <section class="form-section hidden" id="section-5">
+                    <h3>5. Compromiso y Ética</h3>
+                    
+                    <div class="form-group">
+                        <label for="impartiality">¿Por qué consideras importante ser imparcial y justo en tu rol de policía dentro del servidor?</label>
+                        <textarea id="impartiality" name="impartiality" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="friend-infraction">¿Cómo manejarías una situación en la que un amigo de tu personaje es detenido por una infracción grave?</label>
+                        <textarea id="friend-infraction" name="friend-infraction" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="server-behavior">¿Cómo asegurarías que el servidor no se vea afectado por tu comportamiento como policía?</label>
+                        <textarea id="server-behavior" name="server-behavior" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="power-abuse">¿Qué hacer si un compañero de la policía abusa de su poder en una situación?</label>
+                        <textarea id="power-abuse" name="power-abuse" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="administrative-tasks">¿Estás dispuesto a realizar tareas administrativas o de apoyo dentro de la policía, como el manejo de la base de datos de arrestos, patrullas, etc.?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="administrative-tasks" value="Sí" required> Sí</label>
+                            <label><input type="radio" name="administrative-tasks" value="No"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="bribe">En el caso de que un civil te dé una soborno, ¿cómo actuarías?</label>
+                        <textarea id="bribe" name="bribe" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="superior-orders">¿Qué tan dispuesto estás a seguir las órdenes de tus superiores dentro del rol, incluso si no estás de acuerdo con ellas?</label>
+                        <textarea id="superior-orders" name="superior-orders" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="rules-commitment">¿Te comprometes a respetar las reglas del servidor y las directrices del personal de administración?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="rules-commitment" value="Sí" required> Sí</label>
+                            <label><input type="radio" name="rules-commitment" value="No"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="respectful-interactions">¿Cómo garantizarías que las interacciones con otros jugadores sean respetuosas y dentro del rol?</label>
+                        <textarea id="respectful-interactions" name="respectful-interactions" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-btn">Anterior</button>
+                        <button type="button" class="btn next-btn">Siguiente</button>
+                    </div>
+                </section>
+
+                <!-- Sección 6: Evaluación Final y Habilidades -->
+                <section class="form-section hidden" id="section-6">
+                    <h3>6. Evaluación Final y Habilidades</h3>
+                    
+                    <div class="form-group">
+                        <label for="weapons-usage">¿Qué opinas sobre el uso de armas en el servidor? ¿Cuándo consideras que es apropiado usar una?</label>
+                        <textarea id="weapons-usage" name="weapons-usage" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="poor-rp">¿Cómo manejarías una situación en la que un jugador está haciendo un "Roleplay" pobre o no respetando las reglas del servidor?</label>
+                        <textarea id="poor-rp" name="poor-rp" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="special-skills">¿Tienes alguna habilidad o cualidad especial que te haga un buen candidato para el rol de policía (por ejemplo, habilidades de comunicación, liderazgo, toma de decisiones)?</label>
+                        <textarea id="special-skills" name="special-skills" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pressure-handling">¿Cómo manejarías la presión si estuvieras en una misión crítica con otros policías involucrados?</label>
+                        <textarea id="pressure-handling" name="pressure-handling" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="learning-commitment">¿Te comprometes a aprender constantemente y mejorar tus habilidades dentro del servidor?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="learning-commitment" value="Sí" required> Sí</label>
+                            <label><input type="radio" name="learning-commitment" value="No"> No</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="main-goal">Si fueses parte de la Policía Nacional, ¿cuál sería tu mayor objetivo dentro del servidor?</label>
+                        <textarea id="main-goal" name="main-goal" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="critical-situation">En situaciones de alta gravedad, como un tiroteo en curso, ¿cómo organizarías a tu equipo para realizar una intervención eficaz?</label>
+                        <textarea id="critical-situation" name="critical-situation" rows="3" required></textarea>
+                    </div>
+                    
+                    <div class="form-navigation">
+                        <button type="button" class="btn prev-btn">Anterior</button>
+                        <button type="submit" class="btn submit-btn">Enviar Postulación</button>
+                    </div>
+                </section>
+            </form>
+        </div>
+
+        <!-- Resultados -->
+        <div class="results-container hidden">
+            <h2>Evaluación de Postulación</h2>
+            <div class="score-summary">
+                <div class="score-circle">
+                    <span id="total-score">0</span>%
+                </div>
+                <div class="score-label">Puntuación Total</div>
+            </div>
+            
+            <div class="score-details">
+                <div class="score-item">
+                    <div class="score-title">Respuestas Correctas:</div>
+                    <div class="score-value" id="correct-answers">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-title">Respuestas Incorrectas:</div>
+                    <div class="score-value" id="incorrect-answers">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-title">Total de Preguntas:</div>
+                    <div class="score-value" id="total-questions">0</div>
+                </div>
+            </div>
+            
+            <div class="section-scores">
+                <h3>Puntuación por Sección</h3>
+                <div class="section-score-grid">
+                    <div class="section-score-item">
+                        <div class="section-name">Información General</div>
+                        <div class="section-score" id="section1-score">0%</div>
+                    </div>
+                    <div class="section-score-item">
+                        <div class="section-name">Conocimiento de Roles y Normas</div>
+                        <div class="section-score" id="section2-score">0%</div>
+                    </div>
+                    <div class="section-score-item">
+                        <div class="section-name">Resolución de Conflictos</div>
+                        <div class="section-score" id="section3-score">0%</div>
+                    </div>
+                    <div class="section-score-item">
+                        <div class="section-name">Aptitudes de Roleplay</div>
+                        <div class="section-score" id="section4-score">0%</div>
+                    </div>
+                    <div class="section-score-item">
+                        <div class="section-name">Compromiso y Ética</div>
+                        <div class="section-score" id="section5-score">0%</div>
+                    </div>
+                    <div class="section-score-item">
+                        <div class="section-name">Evaluación Final</div>
+                        <div class="section-score" id="section6-score">0%</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="feedback-message" id="feedback-message">
+                <!-- Mensaje de retroalimentación basado en la puntuación -->
+            </div>
+            
+            <button class="btn restart-btn">Reiniciar Postulación</button>
+        </div>
+        
+        <!-- Loading Overlay -->
+        <div class="loading-overlay hidden">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Procesando tu postulación...</div>
+        </div>
+
+        <!-- Success Overlay -->
+        <div class="success-overlay hidden">
+            <div class="success-icon"></div>
+            <div class="success-message">¡Postulación Enviada Correctamente!</div>
+            <div class="success-submessage">Gracias por tu interés en unirte a la Policía Nacional RUMBA RP 2025. Tu aplicación está siendo procesada y pronto recibirás respuesta.</div>
+        </div>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Policía Nacional - RUMBA RP. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
